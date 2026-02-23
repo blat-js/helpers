@@ -1,0 +1,73 @@
+{
+  "name": "@blat-js/helpers",
+  "description": "Helpers",
+  "author": {
+    "email": "andrey.raut@gmail.com",
+    "name": "Andrey Raut",
+    "url": "https://github.com/andrey-raut"
+  },
+  "version": "1.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "repository": {
+    "url": "https://github.com/blat-js/helpers"
+  },
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "tsup",
+    "build": "npm run clean && npm run compile",
+    "dev": "tsup src --watch",
+    "test": "vitest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "@faker-js/faker": "^10.1.0",
+    "@swc/core": "^1.15.11",
+    "@types/node": "^25.1.0",
+    "@vitest/coverage-v8": "^4.0.13",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.13"
+  },
+  "peerDependencies": {},
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/public/*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./*": "./dist/public/*.js"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "keywords": [
+    "accurateSleep",
+    "AppEvent",
+    "BufferedAppEvent",
+    "getBrowserTheme",
+    "getRandomInt",
+    "GlobalVariable",
+    "namedAppEvent",
+    "round",
+    "safeJsonParse",
+    "sleep",
+    "helper"
+  ]
+}

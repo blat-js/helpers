@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { NamedAppEvent, emitNamedEvent, subscribeOnNamedEvent, unsubscribeFromNamedEvent } from './namedAppEvent';
+import { emitNamedEvent, NamedAppEvent, subscribeOnNamedEvent, unsubscribeFromNamedEvent } from './namedAppEvent';
 
 const TEST_EVENT_NAME = 'test-event';
 type TestEventData = { val: number };
@@ -47,7 +47,7 @@ describe('namedEvent', () => {
     expect(callback).not.toBeCalled();
   });
 
-  it('NamedAppEvent.waitForOneEvent', async() => {
+  it('NamedAppEvent.waitForOneEvent', async () => {
     const event = new NamedAppEvent<TestEventData>({ name: TEST_EVENT_NAME });
 
     const promise = event.waitForOneEvent();
@@ -56,5 +56,4 @@ describe('namedEvent', () => {
     const value = await promise;
     expect(value).toEqual({ val: 1 });
   });
-    
 });
